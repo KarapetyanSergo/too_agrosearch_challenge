@@ -1,0 +1,16 @@
+services:
+    too_agrosearch_challenge:
+        container_name: too_agrosearch_challenge
+        build: .
+        volumes:
+            - ../too_agrosearch_challenge:/var/www/html
+        ports:
+            - 9000:80
+
+    mysql_db:
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: too_agroseach_challenge
+        ports:
+            - 3307:3306
